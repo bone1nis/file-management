@@ -34,24 +34,24 @@ npm run build
 
 ### Structure
 
-1. **`/src/`** — Папка с исходным кодом приложения:
-   - **`/components/`** — Папка, где находятся все компоненты используемые в приложении
-   - **`/components/FlatChart.tsx`** — Компонент с плоским графиком.
-   - **`/components/FolderForm.tsx`** — Компонент представляющий форму для создания папок.
-   - **`/components/Menu.tsx`** — Компонент для создания навигационного меню приложения.
-   - **`/components/ResizablePanel.tsx`** — Компонент для ресайзабельной пали, обеспечивающий возможность изменения ширины панели пользователем (drag-and-drop механизм для изменения размеров).
-   - **`/components/TreeView.tsx`** — Компонент для отображения древовидной структуры данных.
+1. **`/src/`** — Folder with the application source code:
+    - **`/components/`** — Folder with all components used in the application
+        - **`/components/FlatChart.tsx`** — Component with a flat chart.
+        - **`/components/FolderForm.tsx`** — Component representing a form for creating folders.
+        - **`/components/Menu.tsx`** — Component for creating the application navigation menu.
+        - **`/components/ResizablePanel.tsx`** — Component for a resizable panel, providing the ability to change the panel width by the user (drag-and-drop mechanism for changing sizes).
+        - **`/components/TreeView.tsx`** — Component for displaying a tree-like data structure.
 
-   - **`/pages/`** — Папка со страницами, которые используются в приложении.
+    - **`/pages/`** — Folder with pages used in the application.
 
-   - **`/context/`** — Папка предназначенная для управления глобальным состоянием Context API.
-   - **`/context/TreeContext.tsx`** — Файл, предназначенный для создания Contex, управления древовидной структурой данных.
-   - **`/context/TreeProvider.tsx`** — Файл, предназначенный для создания Context Provider.
+    - **`/context/`** — Folder for managing the global state of the Context API.
+        - **`/context/TreeContext.tsx`** — File for creating Contex, managing the tree data structure.
+        - **`/context/TreeProvider.tsx`** — File for creating Context Provider.
 
-   - **`/routes/`** — Папка с настройками маршрутиризации в приложении.
-   - **`/routes/routes.tsx`** — Файл с конфигурацией маршрутов.
+    - **`/routes/`** — Folder with routing settings in the application.
+        - **`/routes/routes.tsx`** — File with route configuration.
 
-   - **`/main.tsx`** — Входная точка приложения, главный компонент.
+    - **`/main.tsx`** — Application entry point, main component.
 
-2. **`/public/`** — Папка со статистическими ресурсами
-   - **`/favocion.png`** — Иконка для приложения.
+2. **`/public/`** — Folder with statistical resources
+    - **`/favocion.png`** — Application icon.
