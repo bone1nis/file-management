@@ -14,13 +14,7 @@ TanStack Router
 
 Before you start the project, you need to install everything you need. To do this, take the following steps
 
-1. Clone the repository to your computer:
-
-```
-git clone url
-```
-
-2. Install all dependencies:
+## Install all dependencies:
 
 ```
 npm i
