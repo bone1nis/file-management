@@ -4,10 +4,10 @@ Application for managing files with a tree, a resizing panel, the ability to add
 
 ## Technologies:
 
-#### React
-TypeScript
-MUI
-TanStack Router
+### React
+### TypeScript
+### MUI
+### TanStack Router
 
 
 ## Installing of the project
