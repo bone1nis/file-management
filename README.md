@@ -2,9 +2,9 @@
 
 Application for managing files with a tree, a resizing panel, the ability to add new folders, a flat graph
 
-### Technologies:
+## Technologies:
 
-React
+#### React
 TypeScript
 MUI
 TanStack Router
@@ -14,25 +14,25 @@ TanStack Router
 
 Before you start the project, you need to install everything you need. To do this, take the following steps
 
-## Install all dependencies:
+### Install all dependencies:
 
 ```
 npm i
 ```
 
-## Running a project locally
+### Running a project locally
 
 ```
 npm run dev
 ```
 
-## Build a project
+### Build a project
 
 ```
 npm run build
 ```
 
-## Structure
+### Structure
 
 1. **`/src/`** — Папка с исходным кодом приложения:
    - **`/components/`** — Папка, где находятся все компоненты используемые в приложении
