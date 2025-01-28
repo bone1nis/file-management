@@ -2,7 +2,7 @@ import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { ReactNode } from "@tanstack/react-router";
 
 import Menu from "./Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type ResizablePanel = {
   content: ReactNode;
@@ -10,10 +10,11 @@ type ResizablePanel = {
 
 const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
   const theme = useTheme();
+
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
 
-  const maxWidth = isSmall ? window.innerHeight : 800;
-  const minWidth = isSmall ? window.innerHeight * 0.5 : 400;
+  const maxWidth = isSmall ? document.documentElement.clientWidth * 0.7 : 700;
+  const minWidth = isSmall ? document.documentElement.clientWidth * 0.5 : 350;
   const [width, setWidth] = useState((maxWidth + minWidth) / 2);
 
   const handleMouseDown = () => {
@@ -28,6 +29,21 @@ const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newMaxWidth = isSmall
+        ? document.documentElement.clientWidth * 0.7
+        : 700;
+      const newMinWidth = isSmall
+        ? document.documentElement.clientWidth * 0.5
+        : 400;
+      setWidth((newMaxWidth + newMinWidth) / 2);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isSmall, width]);
 
   return (
     <Stack
