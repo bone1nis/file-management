@@ -54,11 +54,10 @@ const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
         width,
         position: "relative",
         overflow: "auto",
-        display: "flex",
-        flexDirection: { xs: "column", sm: "row" },
         height: "100vh",
         transition: "transform 0.3s, border 0.3s",
       })}
+      direction={{ xs: "column", sm: "row" }}
     >
       <Menu />
       <Box
@@ -82,6 +81,7 @@ const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
           position: "absolute",
           top: 0,
           right: 0,
+          userSelect: "none",
         }}
       />
     </Stack>
