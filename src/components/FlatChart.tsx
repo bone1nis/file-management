@@ -1,6 +1,7 @@
 import { Box, Card, Tooltip, Typography } from "@mui/material";
 
 import { useTreeContext } from "../context/TreeContext";
+import { green, indigo, red } from "@mui/material/colors";
 
 const FlatChart: React.FC = () => {
   const { verificationCounts } = useTreeContext();
@@ -43,9 +44,9 @@ const FlatChart: React.FC = () => {
             display: "flex",
           }}
         >
-          <Box sx={boxStyle(verified, "#357a38")} />
-          <Box sx={boxStyle(partly, "#002984")} />
-          <Box sx={boxStyle(notVerified, "#ba000d")} />
+          <Box sx={boxStyle(verified, green[900])} />
+          <Box sx={boxStyle(partly, indigo[800])} />
+          <Box sx={boxStyle(notVerified, red[800])} />
         </Box>
       </Tooltip>
     </Card>

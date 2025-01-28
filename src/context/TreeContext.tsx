@@ -22,7 +22,7 @@ type TreeContextType = {
   setExpandedNodes: React.Dispatch<React.SetStateAction<string[]>>;
   setSelectNode: React.Dispatch<React.SetStateAction<string>>;
   handleAddTree: (newFolder: string, folderId?: string) => void;
-}
+};
 
 export const TreeContext = createContext<TreeContextType | null>(null);
 

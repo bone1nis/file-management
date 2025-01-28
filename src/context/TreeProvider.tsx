@@ -91,7 +91,7 @@ const TreeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     setTreeData((prev) => {
       if (folderId === "root") {
         updateVerificationCounts("notVerified");
-        
+
         return [
           ...prev,
           {

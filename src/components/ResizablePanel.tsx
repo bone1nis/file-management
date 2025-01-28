@@ -3,6 +3,7 @@ import { ReactNode } from "@tanstack/react-router";
 
 import Menu from "./Menu";
 import { useEffect, useState } from "react";
+import { grey } from "@mui/material/colors";
 
 type ResizablePanel = {
   content: ReactNode;
@@ -14,7 +15,7 @@ const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
 
   const maxWidth = isSmall ? document.documentElement.clientWidth * 0.7 : 700;
-  const minWidth = isSmall ? document.documentElement.clientWidth * 0.5 : 350;
+  const minWidth = isSmall ? document.documentElement.clientWidth * 0.5 : 500;
   const [width, setWidth] = useState((maxWidth + minWidth) / 2);
 
   const handleMouseDown = () => {
@@ -37,7 +38,7 @@ const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
         : 700;
       const newMinWidth = isSmall
         ? document.documentElement.clientWidth * 0.5
-        : 400;
+        : 500;
       setWidth((newMaxWidth + newMinWidth) / 2);
     };
 
@@ -76,7 +77,7 @@ const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
         sx={{
           width: "1px",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.12)",
+          backgroundColor: grey[300],
           cursor: "e-resize",
           position: "absolute",
           top: 0,

@@ -14,7 +14,7 @@ import {
 
 const Menu: React.FC = () => {
   const theme = useTheme();
-  const activeStyle = { backgroundColor: "#1976d2", color: "#fff" };
+  const activeStyle = { backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText };
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -43,11 +43,11 @@ const Menu: React.FC = () => {
           component={Link}
           to={route.to}
           sx={{
-            color: "#000",
+            color: theme.palette.common.black,
             transition: "all 0.2s ease",
             textAlign: "center",
             "&:hover": {
-              opacity: 0.8,
+              color: theme.palette.primary.light,
             },
           }}
         >
