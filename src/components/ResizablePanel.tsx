@@ -1,37 +1,46 @@
-import { Box, Card, useTheme } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { ReactNode } from "@tanstack/react-router";
 
 import Menu from "./Menu";
+import { useState } from "react";
 
 type ResizablePanel = {
-  content: ReactNode
-}
+  content: ReactNode;
+};
 
-const ResizablePanel: React.FC<ResizablePanel> = ({content}) => {
+const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
   const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("md"));
+
+  const maxWidth = isSmall ? window.innerHeight : 800;
+  const minWidth = isSmall ? window.innerHeight * 0.5 : 400;
+  const [width, setWidth] = useState((maxWidth + minWidth) / 2);
+
+  const handleMouseDown = () => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setWidth(Math.min(Math.max(e.clientX, minWidth), maxWidth));
+    };
+    const handleMouseUp = () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  };
 
   return (
-    <Card
-      variant="outlined"
+    <Stack
       sx={() => ({
-        minWidth: 400,
-        maxWidth: 800,
-        resize: "horizontal",
+        minWidth,
+        maxWidth,
+        width,
+        position: "relative",
         overflow: "auto",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { xs: "column", sm: "row" },
         height: "100vh",
-        width: "clamp(300px, 50%, 700px)",
         transition: "transform 0.3s, border 0.3s",
-        padding: "15px",
-        [theme.breakpoints.down("sm")]: {
-          flexDirection: "column",
-          padding: 0,
-        },
-        [theme.breakpoints.down("md")]: {
-          minWidth: "50%",
-          maxWidth: "100%",
-        },
       })}
     >
       <Menu />
@@ -40,12 +49,24 @@ const ResizablePanel: React.FC<ResizablePanel> = ({content}) => {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          gap: "20px",
+          gap: 2,
         }}
       >
         {content}
       </Box>
-    </Card>
+      <Box
+        onMouseDown={handleMouseDown}
+        sx={{
+          width: "1px",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.12)",
+          cursor: "e-resize",
+          position: "absolute",
+          top: 0,
+          right: 0,
+        }}
+      />
+    </Stack>
   );
 };
 
