@@ -66,6 +66,7 @@ const ResizablePanel: React.FC<ResizablePanel> = ({ content }) => {
           display: "flex",
           flexDirection: "column",
           gap: 2,
+          padding: 2,
         }}
       >
         {content}

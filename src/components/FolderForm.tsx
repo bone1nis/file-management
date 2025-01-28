@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-import { Box, Button, TextField, useTheme, Alert } from "@mui/material";
+import { Box, Button, TextField, Alert } from "@mui/material";
 
 import { useTreeContext } from "../context/TreeContext";
 
 const FolderForm: React.FC = () => {
-  const theme = useTheme();
-
   const { selectNode, handleAddTree } = useTreeContext();
 
   const [folderName, setFolderName] = useState("");
@@ -42,12 +40,9 @@ const FolderForm: React.FC = () => {
         onSubmit={handleSubmit}
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
-          gap: "15px",
-          marginBottom: "20px",
-          [theme.breakpoints.down("md")]: {
-            flexDirection: "column",
-          },
+          gap: 5,
         }}
       >
         <TextField

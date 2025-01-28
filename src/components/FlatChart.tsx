@@ -21,22 +21,25 @@ const FlatChart: React.FC = () => {
       width: `${all ? (field / all) * 100 : 0}%`,
       height: "100%",
       "&:hover": {
-        boxShadow: `0 0 2px ${color}}`
-      }
+        boxShadow: `0 0 2px ${color}}`,
+      },
     };
   };
 
   return (
-    <Card sx={{ 
-        padding: "10px",
-        minHeight: "120px" }} >
-      <Typography variant="h6" sx={{ margin: "10px 0 30px 10px" }}>
+    <Card
+      sx={{
+        padding: 2,
+        minHeight: 120,
+      }}
+    >
+      <Typography variant="h6" sx={{ paddingBottom: 5 }}>
         Инсайты
       </Typography>
       <Tooltip title={renderTooltipContent()} placement="bottom">
         <Box
           sx={{
-            height: "20px",
+            height: 20,
             display: "flex",
           }}
         >

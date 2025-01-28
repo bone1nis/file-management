@@ -12,7 +12,6 @@ import {
   useTheme,
 } from "@mui/material";
 
-
 const Menu: React.FC = () => {
   const theme = useTheme();
   const activeStyle = { backgroundColor: "#1976d2", color: "#fff" };

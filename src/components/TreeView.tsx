@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 
 import { Box } from "@mui/material";
@@ -35,7 +34,7 @@ const TreeView: React.FC = () => {
   };
 
   return (
-    <Box sx={{ minHeight: 200, minWidth: 100}}>
+    <Box sx={{ minHeight: 200, minWidth: 100 }}>
       <RichTreeView
         items={treeData}
         expandedItems={expandedNodes}
