@@ -14,7 +14,10 @@ import {
 
 const Menu: React.FC = () => {
   const theme = useTheme();
-  const activeStyle = { backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText };
+  const activeStyle = {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+  };
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -96,11 +99,8 @@ const Menu: React.FC = () => {
         variant="contained"
         onClick={handleDrawerToggle}
         sx={{
-          margin: 2,
+          margin: 1,
           display: { sm: "none" },
-          [theme.breakpoints.down("sm")]: {
-            margin: 0,
-          },
         }}
       >
         Меню
