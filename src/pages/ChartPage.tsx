@@ -1,9 +1,9 @@
-import { Typography } from "@mui/material";
-
 import ResizablePanel from "../components/ResizablePanel";
 
+import FlatChart from "../components/FlatChart";
+
 const ChartPage: React.FC = () => {
-  return <ResizablePanel content={<Typography variant="h2">4</Typography>} />;
+  return <ResizablePanel content={<FlatChart />} />;
 };
 
 export default ChartPage;

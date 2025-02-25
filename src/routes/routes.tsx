@@ -75,7 +75,7 @@ export const router = createRouter({
 });
 
 export const routes = [
-  { to: "/file-management/", label: "Главная" },
+  { to: "/", label: "Главная" },
   { to: "/create-folder", label: "Создать папку" },
   { to: "/panel", label: "Панель" },
   { to: "/chart", label: "График" },

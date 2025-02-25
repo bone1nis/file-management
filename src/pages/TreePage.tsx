@@ -1,9 +1,9 @@
-import { Typography } from "@mui/material";
-
 import ResizablePanel from "../components/ResizablePanel";
 
+import TreeView from "../components/TreeView";
+
 const TreePage: React.FC = () => {
-  return <ResizablePanel content={<Typography variant="h2">5</Typography>} />;
+  return <ResizablePanel content={<TreeView />} />;
 };
 
 export default TreePage;

@@ -1,9 +1,9 @@
-import { Typography } from "@mui/material";
-
 import ResizablePanel from "../components/ResizablePanel";
 
+import FolderForm from "../components/FolderForm";
+
 const CreateFolderPage: React.FC = () => {
-  return <ResizablePanel content={<Typography variant="h2">2</Typography>} />;
+  return <ResizablePanel content={<FolderForm />} />;
 };
 
 export default CreateFolderPage;
