@@ -4,7 +4,6 @@ import {
   createRouter,
   Outlet,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 import ChartPage from "../pages/ChartPage";
 import CreateFolderPage from "../pages/CreateFolderPage";
@@ -18,10 +17,7 @@ import FolderForm from "../components/FolderForm";
 const rootRoute = createRootRoute({
   component: () => {
     return (
-      <>
-        <Outlet />
-        <TanStackRouterDevtools />
-      </>
+      <Outlet />
     );
   },
 });
@@ -75,8 +71,7 @@ const routeTree = rootRoute.addChildren([
 ]);
 
 export const router = createRouter({
-  routeTree,
-  basepath: "file-management",
+  routeTree
 });
 
 export const routes = [
